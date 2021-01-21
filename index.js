@@ -15,8 +15,11 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+//menu -> name price category. 
+
+function createMenuItem(itemName, itemPrice, itemCategory){
+    const newObj = {name: itemName, price: itemPrice, category: itemCategory};
+    return newObj
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -28,8 +31,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
-
+console.log(createMenuItem('sushi', 3, 'fish'));
+console.log(createMenuItem('cheeseburger', 7, 'beef'));
+console.log(createMenuItem('gum', 2, 'chewy'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
@@ -48,9 +52,18 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
+  discount: function(string){
+    if(string === 'teacher' || string === 'student'){
+      return 13.5
+    }else if (string === 'public'){
+      return 16.2
+    }
+  }
 }
 
+burger.discount('student');
+burger.discount('alex');
+burger.discount('teacher');
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -69,7 +82,8 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
+console.log(reviews[5].feedback);
+/*{name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." } */
 
 
 
@@ -78,7 +92,7 @@ Using the reviews array above do the following: (no function needed)
   1. Following the same format (name, rating, feedback), add a new fictitious review object to the reviews array
   2. log the whole array to the console, make sure the new review is inside of it   
 */
-
+/* add another object to the end of the array "array method" */ 
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -86,7 +100,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
-
+/* target the feedback in reynas obj and set the value to something * update in San region* */
 
 
 
@@ -106,7 +120,7 @@ function getReviewByIndex(/*Your code here*/) {
   /*Your code here*/
 }
 
-
+/* something at an index in an array */
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -125,7 +139,7 @@ function getLastReview(/*Your code here*/) {
   /*Your code here*/
 } 
 
-
+/* return last item in an array */
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
