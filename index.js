@@ -61,9 +61,9 @@ export const burger = {
   }
 }
 
-burger.discount('student');
-burger.discount('alex');
-burger.discount('teacher');
+// burger.discount('student');
+// burger.discount('alex');
+// burger.discount('teacher');
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -83,7 +83,6 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 console.log(reviews[5].feedback);
-/*{name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." } */
 
 
 
@@ -92,7 +91,12 @@ Using the reviews array above do the following: (no function needed)
   1. Following the same format (name, rating, feedback), add a new fictitious review object to the reviews array
   2. log the whole array to the console, make sure the new review is inside of it   
 */
-/* add another object to the end of the array "array method" */ 
+
+reviews.push({name: 'string', rating: 5, feedback: 'string'});
+console.log(reviews);
+
+
+
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -100,9 +104,10 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
-/* target the feedback in reynas obj and set the value to something * update in San region* */
 
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
 
+console.log(reviews);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -114,13 +119,14 @@ Use the getReviewByIndex function below to do the following:
   3. The function should return the following string: "{name} gave the restaurant a {rating} star review, and their feedback was: {feedback}"
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
+//getReviewByIndex(reviews,0)
 
-
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, n) {
+  //array = review n = 0
+  return (`${array[n].name} gave the restaurant a ${array[n].rating} star review, and their feedback was: ${array[n].feedback}`);
 }
 
-/* something at an index in an array */
+
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -135,10 +141,12 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array) {
+  let n = array[array.length-1];
+  return `${n.name} gave the restaurant a ${n.rating} star review, and their feedback was: ${n.feedback}`;
+  
 } 
-
+// console.log(getLastReview(reviews, reviews.length-1));
 /* return last item in an array */
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
